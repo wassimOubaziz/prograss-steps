@@ -1,0 +1,95 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f6fa;
+}
+
+body .all {
+  width: 340px;
+}
+
+body .all .balls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body .all .balls .ball {
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  outline: 3px solid #dcdede;
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  transition: outline-color 0.5s linear;
+}
+
+body .all .balls .ball::after {
+  content: "";
+  position: absolute;
+  width: 77px;
+  height: 3px;
+  right: -77px;
+  background-color: #dcdede;
+  z-index: -5;
+
+  transition: background-color 0.5s linear;
+}
+
+body .all .balls .ball.remove::after {
+  display: none;
+
+  transition: background-color 0.5s linear;
+}
+
+body .all .buttons {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+body .all .buttons button {
+  padding: 8px 26px;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  background-color: #dcdede;
+}
+
+body .all .buttons button:hover {
+  opacity: 0.8;
+}
+
+body .all .buttons .prev {
+  margin-right: 15px;
+}
+
+body .all .buttons button.active {
+  background-color: #2687d5;
+}
+
+body .all .balls .ball.active {
+  outline-color: #2687d5;
+  transition: outline-color 0.5s linear;
+}
+
+body .all .balls .ball.line::after {
+  background-color: #2687d5;
+  transition: background-color 0.5s linear;
+}
